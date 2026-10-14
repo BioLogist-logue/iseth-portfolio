@@ -319,12 +319,20 @@ function AboutPanel() {
         ))}
       </dl>
       <BuildingOverview />
-      {p.contact?.map((c) => (
-        <a key={c.url} href={c.url} className="btn">
-          <ExternalLink size={15} />
-          {c.label}
-        </a>
-      ))}
+      {(p.contact?.length ?? 0) > 0 && (
+        <div className="flex flex-wrap gap-2">
+          {p.contact!.map((c) => {
+            // Web links open in a new tab so the tower stays open; mailto: etc. stay as-is.
+            const web = /^https?:\/\//.test(c.url);
+            return (
+              <a key={c.url} href={c.url} className="btn" {...(web ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
+                <ExternalLink size={15} />
+                {c.label}
+              </a>
+            );
+          })}
+        </div>
+      )}
     </article>
   );
 }
