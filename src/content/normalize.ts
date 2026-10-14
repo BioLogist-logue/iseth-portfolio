@@ -50,6 +50,7 @@ export function toPortfolioItem(entry: PortfolioEntry): PortfolioItem {
     details: entry.description?.trim() || undefined,
     thumbnail: entry.thumbnail || undefined,
     thumbnailAlt: entry.thumbnailAlt,
+    thumbnailFit: entry.thumbnailFit,
     publishedAt: entry.publishedAt,
     date: entry.date || undefined,
     role: entry.role || undefined,

@@ -20,6 +20,7 @@ const DEFAULT_KIND: Record<ItemType, ObjectKind> = {
   reflection: "book",
   essay: "frame",
   template: "folder",
+  role: "badge",
 };
 
 export function objectKind(item: PortfolioItem): ObjectKind {

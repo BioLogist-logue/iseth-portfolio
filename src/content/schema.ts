@@ -73,6 +73,8 @@ export interface BaseEntry {
   thumbnail?: string;
   /** 대표 이미지 설명 (생략하면 제목) */
   thumbnailAlt?: string;
+  /** "contain" 이면 이미지를 자르지 않고 전체를 보여 줍니다 (배지 · 로고). 기본은 꽉 채우기 */
+  thumbnailFit?: "cover" | "contain";
   /** 추가 이미지 */
   gallery?: GalleryImage[];
   /** 내려받을 파일 */

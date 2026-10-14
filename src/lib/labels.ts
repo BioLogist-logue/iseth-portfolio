@@ -14,6 +14,7 @@ export const typeLabel: Record<ItemType, string> = {
   reflection: "성찰",
   essay: "에세이",
   template: "템플릿",
+  role: "활동",
 };
 
 export const statusLabel: Record<ItemStatus, string> = {
@@ -35,6 +36,9 @@ export const statusColor: Record<ItemStatus, string> = {
 };
 
 export function formatDate(iso: string) {
+  // Month-only dates ("2026-09") stay month-only instead of inventing a day.
+  const ym = /^(\d{4})-(\d{2})$/.exec(iso);
+  if (ym) return `${ym[1]}.${ym[2]}`;
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return iso;
   return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, "0")}.${String(d.getDate()).padStart(2, "0")}`;

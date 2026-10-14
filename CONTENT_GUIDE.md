@@ -21,11 +21,10 @@
 | 2F 수업 설계 | `portfolio/teaching.ts` | `teaching-template.ts` | `2f-biology` 생명과학 · `2f-integrated` 통합과학 · `2f-inquiry` 탐구 활동 · `2f-assessment` 수행평가 · `2f-worksheets` 학습지 |
 | 3F AI · 디지털 수업 사례 | `portfolio/aiDigital.ts` | `ai-digital-template.ts` | `3f-cases` |
 | 3F AI 리터러시 | `portfolio/aiDigital.ts` | `ai-literacy-template.ts` | `3f-literacy` |
-| 4F 앱 | `portfolio/apps.ts` | `app-template.ts` | `4f-dev` 개발 중 · `4f-integrated` 통합과학 · `4f-biology` 생명과학 · `4f-inquiry` 기타 탐구 도구 |
-| 5F 강의 · 연수 | `portfolio/lectures.ts` | `lecture-template.ts` | `5f-lectures` 강의 · `5f-workshops` 워크숍 · `5f-materials` 자료실 |
-| 6F 배지 · 자격 | `portfolio/growth.ts` | `badge-template.ts` | `6f-badges` 배지 · `6f-certs` 자격 · 수료 |
-| 6F 성장 이정표 | `portfolio/growth.ts` | `milestone-template.ts` | `6f-timeline` |
-| B1 업무 시스템 | `portfolio/workflows.ts` | `workflow-template.ts` | `b1-automation` 자동화 · `b1-data` 데이터 · 평가 |
+| 4F 앱 | `portfolio/apps.ts` | `app-template.ts` | `4f-dev` 개발 중 · `4f-integrated` 통합과학 · `4f-biology` 생명과학 · `4f-inquiry` 탐구 · 교사용 도구 |
+| 5F 강의 · 연수 | `portfolio/lectures.ts` | `lecture-template.ts` | `5f-lectures` 과학 교사 연수 · `5f-workshops` AI WING UP 연수 · `5f-materials` 자료실 |
+| 6F 배지 · 자격 · 활동 | `portfolio/growth.ts` | `badge-template.ts` | `6f-badges` 디지털 배지 · `6f-certs` 자격 · 인증 · `6f-roles` 선도교사 · 전문가 활동 · `6f-timeline` 연수 · 강사 활동 |
+| B1 업무 시스템 | `portfolio/workflows.ts` | `workflow-template.ts` | `b1-automation` 업무 자동화 · AI 도구 · `b1-data` 데이터 · 평가 |
 | B2 성찰 | `portfolio/reflections.ts` | `reflection-template.ts` | `b2-lessons` 수업 개선 · `b2-iterations` 앱 개선 |
 | B3 교육 철학 | `portfolio/philosophy.ts` | `philosophy-template.ts` | `b3-teaching` · `b3-science` · `b3-assessment` |
 | B4 담임 아카이브 | `portfolio/homeroom.ts` | `homeroom-template.ts` | `b4-management` · `b4-communication` · `b4-templates` |
@@ -109,6 +108,7 @@ attachments: [
 - 파일 종류(PDF, 한글, PPT 등)는 확장자로 자동 판단합니다.
 - 파일 이름은 영문 · 숫자로 짓는 것이 안전합니다. (예: `photosynthesis-2026.pdf`)
 - `thumbnail` 이 없으면 자동으로 색 그림이 들어갑니다.
+- 배지 · 로고처럼 잘리면 안 되는 이미지는 `thumbnailFit: "contain"` 을 함께 쓰면 전체가 보입니다.
 
 ## 7. 외부 링크 버튼 달기
 

@@ -56,7 +56,8 @@ export type ItemType =
   | "tool"
   | "reflection"
   | "essay"
-  | "template";
+  | "template"
+  | "role";
 
 export type ItemStatus =
   | "IDEA"
@@ -102,6 +103,8 @@ export interface PortfolioItem {
   thumbnail?: string;
   /** Alt text for the thumbnail. Falls back to the title. */
   thumbnailAlt?: string;
+  /** "contain" shows the whole image (badges, logos); default "cover" fills the frame. */
+  thumbnailFit?: "cover" | "contain";
   publishedAt: string; // ISO date (YYYY-MM-DD)
   date?: string; // display date / period, e.g. "2025.03 – 2025.07"
   role?: string;

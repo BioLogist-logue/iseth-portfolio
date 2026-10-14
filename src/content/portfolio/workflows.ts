@@ -12,25 +12,29 @@ import type { WorkflowEntry } from "../schema";
 export const workflowEntries: WorkflowEntry[] = [
   // ── B1 업무 시스템 ──────────────────────────────────────────
   {
-    id: "system-attendance",
+    id: "student-record-drafter",
     template: "workflow",
-    sample: true, // 예시 콘텐츠 — 실제 내용으로 바꾸면 이 줄을 지우세요
-    title: "과제 제출 현황 자동 알림",
-    type: "tool",
+    title: "학생부 초안 작성 보조 AI",
     floor: "b1",
     zone: "b1-automation",
-    shortDescription: "Google Forms 제출 기록을 정리해 미제출 학생 명단을 매일 아침 자동으로 정리합니다.",
-    publishedAt: "2026-03-10",
-    tools: ["Google Apps Script", "Google Forms"],
-    tags: ["Apps Script", "자동화", "업무 흐름"],
-    // ── 템플릿 필드 예시 ──
-    problem: "과제 미제출 학생을 매번 손으로 확인하느라 시간이 오래 걸렸습니다.",
-    previousProcess: "제출 기록을 내려받아 명렬표와 하나씩 대조했습니다.",
-    newProcess: "제출 기록이 시트에 쌓이면 스크립트가 미제출 명단을 정리합니다.",
-    automation: "매일 아침 7시에 미제출 명단을 정리해 교사에게만 보이는 시트에 기록합니다.",
-    result: "확인 작업이 하루 한 번, 1분 안으로 줄었습니다.",
-    timeSaved: "주당 약 1시간 (예시)",
-    reflection: "학생 이름이 담긴 데이터는 교사 계정 안에서만 다루도록 설계했습니다.",
+    status: "TESTING",
+    shortDescription: "학생 활동 내용을 입력하면 학생부 기록에 참고할 수 있는 초안 문장 작성을 도와주는 AI 도구입니다.",
+    publishedAt: "2026-06-01",
+    date: "v3.5 · 2026.06 업데이트",
+    description: "학생부 초안을 더 빠르고 쉽게 잘 작성할 수는 없을까요? 교사는 학생 활동을 잘 정리하기만 하면 됩니다.",
+    problem:
+      "학생부 기록 작성은 교사에게 많은 시간과 노력이 필요한 업무입니다. 특히 학생 활동 내용을 바탕으로 적절한 문장을 구성하는 것은 어려운 작업입니다. 시중에 유료 서비스는 많지만 학생부 기록에 특화된 무료 도구는 부족합니다.",
+    newProcess: "학생 활동 내용 입력 → AI가 초안 문장 생성 → 교사가 초안 문장 검토 및 수정",
+    tools: ["Python", "Streamlit", "Google Gemini API (2.5 Flash)"],
+    automation: "학생 활동 내용을 입력하면 AI가 참고할 수 있는 초안 문장을 생성합니다.",
+    result: "학생부 기록을 더 빠르고 쉽게 작성할 수 있게 되었고, 학생 활동 내용을 보다 효과적으로 기록할 수 있습니다.",
+    reflection:
+      "AI를 활용한 초안 작성 보조 도구입니다. 생성된 문장의 사실 관계 확인과 최종 기재 책임은 작성 교사 본인에게 있으며, 교육부의 기재 요령을 준수해야 합니다. 개인 유료 API를 사용 중이라 한도를 넘으면 개인 무료 API로 바꿔 쓰도록 안내합니다.",
+    tags: ["학생부", "AI", "업무 효율화", "Streamlit"],
+    externalLinks: [
+      { label: "웹앱 열기", url: "https://haksangbu.streamlit.app/", kind: "live" },
+      { label: "개발 기록", url: "https://blog.naver.com/biologue_/224273378890", kind: "external" },
+    ],
     object: "monitor",
   },
   {

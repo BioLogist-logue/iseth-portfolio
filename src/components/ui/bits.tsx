@@ -38,15 +38,19 @@ export function Thumb({
   alt,
   seed,
   className = "",
+  fit = "cover",
 }: {
   src?: string;
   alt: string;
   seed: string;
   className?: string;
+  /** "contain" keeps the whole image visible (badges, logos). */
+  fit?: "cover" | "contain";
 }) {
   if (src) {
+    const fitClass = fit === "contain" ? "object-contain p-2" : "object-cover";
     // eslint-disable-next-line @next/next/no-img-element
-    return <img src={src} alt={alt} loading="lazy" decoding="async" className={`object-cover ${className}`} />;
+    return <img src={src} alt={alt} loading="lazy" decoding="async" className={`${fitClass} ${className}`} />;
   }
   const h = hash(seed);
   const [a, b, bg] = PALETTES[h % PALETTES.length];

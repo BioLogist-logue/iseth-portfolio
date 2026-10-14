@@ -96,7 +96,8 @@ function ItemDetail({ item }: { item: PortfolioItem }) {
   const paragraphs = (item.details ?? "").split(/\n\s*\n/).filter(Boolean);
   const meta: [string, string | undefined][] = [
     ["유형", typeLabel[item.type]],
-    ["기간", item.date ?? formatDate(item.publishedAt)],
+    // Without a display period, show the posting date under its own name.
+    item.date ? ["기간", item.date] : ["게시일", formatDate(item.publishedAt)],
     ["역할", item.role],
     ...(item.facts ?? []).map((f) => [f.label, f.value] as [string, string]),
   ];
@@ -107,7 +108,7 @@ function ItemDetail({ item }: { item: PortfolioItem }) {
   return (
     <article>
       <div className="aspect-[16/9] w-full overflow-hidden bg-[var(--surface-2)]">
-        <Thumb src={item.thumbnail} alt={item.thumbnailAlt ?? item.title} seed={item.id} className="h-full w-full" />
+        <Thumb src={item.thumbnail} alt={item.thumbnailAlt ?? item.title} seed={item.id} fit={item.thumbnailFit} className="h-full w-full" />
       </div>
       <div className="space-y-5 p-5 sm:p-6">
         <header className="space-y-2 pr-8">
@@ -191,11 +192,11 @@ function ItemDetail({ item }: { item: PortfolioItem }) {
 
         {(item.gallery?.length ?? 0) > 0 && (
           <section>
-            <h3 className="section-title">{item.type === "app" ? "스크린샷" : "이미지"}</h3>
+            <h3 className="section-title">{item.type === "app" ? "스크린샷" : item.type === "badge" ? "배지 모음" : "이미지"}</h3>
             <div className="grid grid-cols-2 gap-2">
               {item.gallery!.map((g, i) => (
                 <figure key={i} className="overflow-hidden rounded-lg bg-[var(--surface-2)]">
-                  <Thumb src={g.src} alt={g.alt} seed={g.seed ?? `${item.id}-${i}`} className="aspect-[16/10] h-auto w-full" />
+                  <Thumb src={g.src} alt={g.alt} seed={g.seed ?? `${item.id}-${i}`} fit="contain" className="aspect-[16/10] h-auto w-full" />
                   <figcaption className="px-2 py-1.5 text-xs text-[var(--ink-3)]">{g.alt}</figcaption>
                 </figure>
               ))}
@@ -361,7 +362,7 @@ export function ItemCard({ item, onSelect }: { item: PortfolioItem; onSelect: ()
   const { zone, floor } = locateItem(item);
   return (
     <button type="button" onClick={onSelect} className="item-card">
-      <Thumb src={item.thumbnail} alt="" seed={item.id} className="h-16 w-24 shrink-0 rounded-md" />
+      <Thumb src={item.thumbnail} alt="" seed={item.id} fit={item.thumbnailFit} className="h-16 w-24 shrink-0 rounded-md" />
       <span className="min-w-0 flex-1 text-left">
         <span className="flex flex-wrap items-center gap-1">
           <NewBadge date={item.publishedAt} />

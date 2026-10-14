@@ -30,7 +30,7 @@ const floorsList = [
     nameEn: "Growth Exhibition",
     tagline: "배지, 자격, 그리고 성장의 기록",
     description:
-      "교사로서의 성장 과정을 차분하게 전시합니다. 자격과 배지, 주요 이정표, 경력의 흐름을 한눈에 볼 수 있습니다.",
+      "교사로서의 성장 과정을 차분하게 전시합니다. 디지털 배지와 자격 · 인증, 선도교사 · 강사 활동을 한눈에 볼 수 있습니다.",
     type: "standard",
     publishedAt: "2026-03-01",
     sceneType: "gallery",

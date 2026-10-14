@@ -19,7 +19,7 @@ export const milestoneTemplate: MilestoneEntry = {
   title: "", // 제목. 길어도 괜찮습니다.
   shortDescription: "", // 한두 문장 요약 (카드와 패널 첫 줄)
   floor: "6f", // 층 id
-  zone: "6f-timeline", // 구역 id — "6f-timeline"
+  zone: "6f-timeline", // 구역 id — "6f-badges" | "6f-certs" | "6f-roles" | "6f-timeline"
   publishedAt: "2026-01-01", // 게시일 YYYY-MM-DD (14일 동안 NEW 표시)
 
   // ━━ 선택 항목 (필요 없으면 줄째 지워도 됩니다) ━━━━━━━━━━━━━━━━━
