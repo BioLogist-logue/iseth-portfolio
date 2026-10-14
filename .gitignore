@@ -1,0 +1,10 @@
+node_modules
+.next
+out
+*.tsbuildinfo
+next-env.d.ts
+.env*.local
+
+# local reference images and editor/agent settings (not needed to run the site)
+iseth-portfolio-tower-reference/
+.claude/
