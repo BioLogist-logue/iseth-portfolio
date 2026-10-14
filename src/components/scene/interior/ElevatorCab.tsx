@@ -1,10 +1,10 @@
 "use client";
 
-import { useFrame, useThree, type ThreeEvent } from "@react-three/fiber";
+import { useFrame, type ThreeEvent } from "@react-three/fiber";
 import { useRef } from "react";
 import * as THREE from "three";
 import { buttonLabel, floorLabel, getFloor } from "@/lib/building";
-import { CAB, ROOM_BACK_Z, cabPose } from "@/lib/layout";
+import { CAB, ROOM_BACK_Z } from "@/lib/layout";
 import { useTower } from "@/store/tower";
 import { Label } from "../common/Label";
 import { mats } from "../common/materials";
@@ -26,9 +26,8 @@ export function ElevatorCab() {
   const right = useRef<THREE.Mesh>(null);
   const light = useRef<THREE.PointLight>(null);
   const open = useRef(0);
-  const camera = useThree((s) => s.camera);
 
-  useFrame((state, dt) => {
+  useFrame((_, dt) => {
     const s = useTower.getState();
     const target = s.doorsOpen ? 1 : 0;
     const dur = s.reducedMotion ? 0.3 : target ? 0.85 : 0.75;
@@ -41,13 +40,9 @@ export function ElevatorCab() {
 
     const inCab = s.sub === "elevator";
     if (light.current) light.current.intensity = THREE.MathUtils.damp(light.current.intensity, inCab ? 6 : 0, 6, dt);
-
-    // Gentle ride vibration while travelling (skipped for reduced motion).
-    if (inCab && s.elevator.phase === "moving" && !s.reducedMotion) {
-      const base = cabPose().position;
-      const t = state.clock.elapsedTime;
-      camera.position.y = base[1] + Math.sin(t * 38) * 0.004 + Math.sin(t * 11) * 0.006;
-    }
+    // No camera shake while travelling: so close to the doors, even a 1 cm
+    // jitter reads as the doors themselves wobbling. The hum and the floor
+    // indicator carry the sense of motion.
   });
 
   const enter = (e: ThreeEvent<MouseEvent>) => {
