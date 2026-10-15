@@ -147,7 +147,7 @@ const floorsList = [
     nameEn: "Homeroom Archive",
     tagline: "학급 운영과 소통의 기록",
     description:
-      "담임교사로서의 학급 운영, 학생·학부모 소통, 템플릿과 루틴을 정리했습니다. 모든 사례는 익명화되어 있습니다.",
+      "담임교사로서의 학급 운영, 학생·학부모 소통, 학급 행사를 정리했습니다. 학생을 알아볼 수 있는 정보는 싣지 않았습니다.",
     type: "basement",
     publishedAt: "2026-03-01",
     sceneType: "homeroom",

@@ -19,7 +19,7 @@ export const homeroomTemplate: HomeroomEntry = {
   title: "", // 제목. 길어도 괜찮습니다.
   shortDescription: "", // 한두 문장 요약 (카드와 패널 첫 줄)
   floor: "b4", // 층 id
-  zone: "b4-management", // 구역 id — "b4-management" | "b4-communication" | "b4-templates"
+  zone: "b4-management", // 구역 id — "b4-management" (학급 운영 · 루틴) | "b4-communication" (학생 · 학부모 소통) | "b4-templates" (학급 행사 · 관계 맺기)
   publishedAt: "2026-01-01", // 게시일 YYYY-MM-DD (14일 동안 NEW 표시)
 
   // ━━ 선택 항목 (필요 없으면 줄째 지워도 됩니다) ━━━━━━━━━━━━━━━━━

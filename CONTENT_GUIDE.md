@@ -27,7 +27,7 @@
 | B1 업무 시스템 | `portfolio/workflows.ts` | `workflow-template.ts` | `b1-automation` 업무 자동화 · AI 도구 · `b1-data` 데이터 · 평가 |
 | B2 성찰 | `portfolio/reflections.ts` | `reflection-template.ts` | `b2-lessons` 수업 개선 · `b2-iterations` 앱 개선 |
 | B3 교육 철학 | `portfolio/philosophy.ts` | `philosophy-template.ts` | `b3-teaching` · `b3-science` · `b3-assessment` |
-| B4 담임 아카이브 | `portfolio/homeroom.ts` | `homeroom-template.ts` | `b4-management` · `b4-communication` · `b4-templates` |
+| B4 담임 아카이브 | `portfolio/homeroom.ts` | `homeroom-template.ts` | `b4-management` 학급 운영 · 루틴 · `b4-communication` 학생 · 학부모 소통 · `b4-templates` 학급 행사 · 관계 맺기 |
 | RF 옥상 정원 | `portfolio/rooftop.ts` | `rooftop-project-template.ts` | `rf-garden` |
 
 `floor` 에는 층 id(`"2f"`, `"b1"`, `"rf"` …)를 씁니다. 구역 id 앞부분과 같습니다.
