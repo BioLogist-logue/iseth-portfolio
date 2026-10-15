@@ -108,7 +108,7 @@ const zonesList = [
     nameEn: "AI Literacy",
     sceneType: "smart-classroom",
     description:
-      "AI 윤리, 환각과 오류 인식, 출처 확인, 응답 평가, 책임 있는 AI 사용을 다룬 학생 활동입니다.",
+      "AI에게 문장으로 질문하기, AI에 기대기 전에 먼저 생각하기처럼 수업 속에서 기른 AI 리터러시입니다.",
     accent: "#3aa0a0",
     order: 2,
   },
