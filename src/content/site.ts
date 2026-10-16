@@ -36,6 +36,7 @@ export const recommendations: Recommendation[] = [
 
 /** Lobby "최근 소식", newest first. `date` may be YYYY-MM-DD or YYYY-MM. */
 export const updates: UpdateEntry[] = [
+  { date: "2026-10-16", text: "5F 연수 자료실 개관 — 센서 구입 가이드, 센서 데이터 분석 가이드, 디벗 활용, PRD 작성법", floorId: "5f" },
   { date: "2026-10-15", text: "3F에 세포막 물질 수송 3차시 AI 수업 사례 추가 — 사전·사후 검사로 본 학습 주도성 변화", floorId: "3f", itemId: "case-membrane-active-inquirer" },
   { date: "2026-10-15", text: "옥상 정원에 My Tasks 추가 — 데스크톱 할 일 위젯", floorId: "rf", itemId: "my-tasks" },
   { date: "2026-10-15", text: "옥상 정원에 iSETH-clock 추가 — 수업 · 연수용 시간 운영 콘솔", floorId: "rf", itemId: "iseth-clock" },
